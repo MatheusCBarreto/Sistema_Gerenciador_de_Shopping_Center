@@ -1,8 +1,6 @@
 package entities;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.logging.SimpleFormatter;
 
 public class Produto {
 
@@ -45,11 +43,12 @@ public class Produto {
 
         LocalDate hoje = LocalDate.now();
 
-        if(data.getAno() > hoje.getYear()) {
+        if (data.getAno() > hoje.getYear()) {
             return false;
         } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())) {
             return false;
-        } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear()) && (data.getDia() > hoje.getDayOfMonth())) {
+        } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())
+                && (data.getDia() > hoje.getDayOfMonth())) {
             return false;
         } else {
             return true;
