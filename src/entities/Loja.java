@@ -3,14 +3,14 @@ package entities;
 public class Loja {
 
     private String nome;
-    private Integer quantidadeFuncionarios;
-    private Integer salarioBaseFuncionario;
+    private int quantidadeFuncionarios;
+    private int salarioBaseFuncionario;
     private Endereco endereco;
     private Data dataFundacao;
 
 
     // Construtores
-    public Loja(String nome, Integer quantidadeFuncionarios, Integer salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
@@ -18,7 +18,7 @@ public class Loja {
         this.dataFundacao = dataFundacao;
     }
 
-    public Loja(String nome, Integer quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         salarioBaseFuncionario = -1;
@@ -35,19 +35,19 @@ public class Loja {
         this.nome = nome;
     }
 
-    public Integer getQuantidadeFuncionarios() {
+    public int getQuantidadeFuncionarios() {
         return quantidadeFuncionarios;
     }
 
-    public void setQuantidadeFuncionarios(Integer quantidadeFuncionarios) {
+    public void setQuantidadeFuncionarios(int quantidadeFuncionarios) {
         this.quantidadeFuncionarios = quantidadeFuncionarios;
     }
 
-    public Integer getSalarioBaseFuncionario() {
+    public int getSalarioBaseFuncionario() {
         return salarioBaseFuncionario;
     }
 
-    public void setSalarioBaseFuncionario(Integer salarioBaseFuncionario) {
+    public void setSalarioBaseFuncionario(int salarioBaseFuncionario) {
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
 

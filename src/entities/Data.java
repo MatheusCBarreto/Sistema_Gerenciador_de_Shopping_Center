@@ -8,38 +8,38 @@ package entities;
 
 public class Data {
 
-    private Integer dia;
-    private Integer mes;
-    private Integer ano = 2000;
+    private int dia;
+    private int mes;
+    private int ano = 2000;
 
-    public Data(Integer dia, Integer mes, Integer ano) {
+    public Data(int dia, int mes, int ano) {
         validarData(dia, mes, ano);
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
     }
 
-    public Integer getDia() {
+    public int getDia() {
         return dia;
     }
 
-    public void setDia(Integer dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 
-    public Integer getMes() {
+    public int getMes() {
         return mes;
     }
 
-    public void setMes(Integer mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 
-    public Integer getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(Integer ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
@@ -49,7 +49,7 @@ public class Data {
         else return false;
     }
 
-    public String validarData(Integer dia, Integer mes, Integer ano) {
+    public String validarData(int dia, int mes, int ano) {
 
         String dataPadrao = "1/1/2000";
 

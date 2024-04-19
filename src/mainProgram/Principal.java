@@ -24,10 +24,10 @@ public class Principal {
                     String nomeLoja = input.next();
 
                     System.out.println("Quantos funcionários tem a sua loja? ");
-                    Integer qtdFuncionariosLoja = input.nextInt();
+                    int qtdFuncionariosLoja = input.nextInt();
 
                     System.out.println("Qual o salario base do seu funcionário? ");
-                    Integer salarioBase = input.nextInt();
+                    int salarioBase = input.nextInt();
 
                     System.out.print("----------------------------------------------------");
 
@@ -85,17 +85,17 @@ public class Principal {
                     String nomeProduto = input.next();
 
                     System.out.println("Qual o preço do produto? ");
-                    Integer precoProduto = input.nextInt();
+                    int precoProduto = input.nextInt();
 
                     System.out.print("E a data de validade? \n");
                     System.out.println("Dia: ");
-                    Integer diaValidadeProduto = input.nextInt();
+                    int diaValidadeProduto = input.nextInt();
 
                     System.out.println("Mês: ");
-                    Integer mesValidadeProduto = input.nextInt();
+                    int mesValidadeProduto = input.nextInt();
 
                     System.out.println("Ano: ");
-                    Integer anoValidadeProduto = input.nextInt();
+                    int anoValidadeProduto = input.nextInt();
 
                     try {
                         Produto produto = new Produto(nomeProduto, precoProduto,

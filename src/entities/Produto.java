@@ -5,10 +5,10 @@ import java.time.LocalDate;
 public class Produto {
 
     private String nome;
-    private Integer preco;
+    private int preco;
     private Data dataValidade;
 
-    public Produto(String nome, Integer preco, Data dataValidade) {
+    public Produto(String nome, int preco, Data dataValidade) {
         this.nome = nome;
         this.preco = preco;
         this.dataValidade = dataValidade;
@@ -22,11 +22,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Integer getPreco() {
+    public int getPreco() {
         return preco;
     }
 
-    public void setPreco(Integer preco) {
+    public void setPreco(int preco) {
         this.preco = preco;
     }
 
