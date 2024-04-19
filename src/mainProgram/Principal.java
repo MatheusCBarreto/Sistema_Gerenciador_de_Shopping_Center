@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        // teste
+
         Scanner input = new Scanner(System.in);
 
         int response = 0;
@@ -53,9 +53,7 @@ public class Principal {
                     System.out.print("Algum complemento? \n");
                     String enderecoComplemento = input.nextLine();
 
-
                     System.out.print("----------------------------------------------------");
-
 
                     System.out.println("Qual a data de fundação da sua loja? ");
                     System.out.println("Dia? \n");
@@ -69,12 +67,13 @@ public class Principal {
 
                     try {
                         Loja loja = new Loja(nomeLoja, qtdFuncionariosLoja, salarioBase,
-                                new Endereco(enderecoNomeRua, enderecoCidade, enderecoEstado, enderecoPais, enderecoCep, enderecoNumeroLoja, enderecoComplemento),
+                                new Endereco(enderecoNomeRua, enderecoCidade, enderecoEstado, enderecoPais, enderecoCep,
+                                        enderecoNumeroLoja, enderecoComplemento),
                                 new Data(dataFundacaoDia, dataFundacaoMes, dataFundacaoAno));
 
                         System.out.print("********** LOJA CRIADA COM SUCESSO! ************");
 
-                    } catch(Exception error) {
+                    } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar a loja. Tente novamente!");
                     }
                     break;
@@ -98,13 +97,13 @@ public class Principal {
                     System.out.println("Ano: ");
                     Integer anoValidadeProduto = input.nextInt();
 
-
                     try {
-                        Produto produto = new Produto(nomeProduto, precoProduto, new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
+                        Produto produto = new Produto(nomeProduto, precoProduto,
+                                new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
 
                         System.out.print("********** LOJA CRIADA COM SUCESSO! ***********");
 
-                    } catch(Exception error) {
+                    } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar o produto. Tente novamente!");
                     }
 
@@ -113,7 +112,7 @@ public class Principal {
                     break;
                 default:
                     System.out.print("Opção inválida!");
-                break;
+                    break;
             }
 
         }
