@@ -71,7 +71,9 @@ public class Principal {
                                         enderecoNumeroLoja, enderecoComplemento),
                                 new Data(dataFundacaoDia, dataFundacaoMes, dataFundacaoAno));
 
-                        System.out.print("********** LOJA CRIADA COM SUCESSO! ************ \n\n");
+                        System.out.print("********** LOJA CRIADA COM SUCESSO! ************ \n");
+                        System.out.print("Informações da sua loja: \n");
+                        System.out.print(loja + "\n\n");
 
                     } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar a loja. Tente novamente!");

@@ -89,12 +89,18 @@ public class Loja {
 
     @Override
     public String toString() {
-        return "Loja{" +
-                "nome='" + nome + '\'' +
-                ", quantidadeFuncionarios=" + quantidadeFuncionarios +
-                ", salarioBaseFuncionario=" + salarioBaseFuncionario +
-                ", endereco=" + endereco +
-                ", dataFundacao=" + dataFundacao +
-                '}';
+        return "Dados da loja: \n " +
+                "Nome: '" + nome + " \n " +
+                "QuantidadeFuncionarios: " + quantidadeFuncionarios + "\n " +
+                "SalarioBaseFuncionario: " + salarioBaseFuncionario + "\n " +
+                "*** Endereco: *** \n " +
+                "Rua: " + endereco.getNomeDaRua() + "\n " +
+                "Cidade: " + endereco.getCidade() + "\n " +
+                "Estado: " + endereco.getEstado() + "\n " +
+                "País: " + endereco.getPais() + "\n " +
+                "CEP: " + endereco.getCep() + "\n " +
+                "Número: " + endereco.getNumero() + "\n " +
+                "Complemento: " + endereco.getComplemento() + "\n " +
+                "Data de Fundação: " + dataFundacao.getDia() + "/" + dataFundacao.getMes() + "/" + dataFundacao.getAno();
     }
 }
