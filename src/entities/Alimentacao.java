@@ -19,8 +19,18 @@ public class Alimentacao extends Loja {
 
     @Override
     public String toString() {
-        return "Alimentacao{" +
-                "dataAlvara=" + dataAlvara +
-                "} " + super.toString();
+        return "Informações da loja de Alimentação: " + "\n " +
+                "Nome da loja: " + getNome() + "\n " +
+                "Quantidade de funcionários: " + getQuantidadeFuncionarios() + "\n " +
+                "Salário base dos funcionários: " + getSalarioBaseFuncionario() + "\n " +
+                "--------- Endereço ---------" +
+                "Nome da rua: " + getEndereco().getNomeDaRua() + "\n " +
+                "Cidade: " + getEndereco().getCidade() + "\n " +
+                "Estado: " + getEndereco().getEstado() + "\n " +
+                "País: " + getEndereco().getPais() + "\n " +
+                "CEP: " + getEndereco().getCep() + "\n " +
+                "Número: " + getEndereco().getNumero() + "\n " +
+                "Complemento: " + getEndereco().getComplemento() + "\n " +
+                "Data do Alvara: " + dataAlvara + "\n ";
     }
 }

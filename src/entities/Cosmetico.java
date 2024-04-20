@@ -19,9 +19,19 @@ public class Cosmetico extends Loja {
 
     @Override
     public String toString() {
-        return "Cosmetico{" +
-                "taxaComercializacao=" + taxaComercializacao +
-                "} " + super.toString();
+        return "Informações da loja de cosméticos: " + "\n " +
+                "Nome da loja: " + getNome() + "\n " +
+                "Quantidade de funcionários: " + getQuantidadeFuncionarios() + "\n " +
+                "Salário base dos funcionários: " + getSalarioBaseFuncionario() + "\n " +
+                "--------- Endereço ---------" +
+                "Nome da rua: " + getEndereco().getNomeDaRua() + "\n " +
+                "Cidade: " + getEndereco().getCidade() + "\n " +
+                "Estado: " + getEndereco().getEstado() + "\n " +
+                "País: " + getEndereco().getPais() + "\n " +
+                "CEP: " + getEndereco().getCep() + "\n " +
+                "Número: " + getEndereco().getNumero() + "\n " +
+                "Complemento: " + getEndereco().getComplemento() + "\n " +
+                "taxaComercializacao: " + taxaComercializacao;
     }
 }
 

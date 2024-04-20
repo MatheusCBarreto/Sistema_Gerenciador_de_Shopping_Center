@@ -8,8 +8,8 @@ package entities;
 
 public class Data {
 
-    private int dia;
-    private int mes;
+    private int dia = 1;
+    private int mes = 1;
     private int ano = 2000;
 
     public Data(int dia, int mes, int ano) {
@@ -70,10 +70,9 @@ public class Data {
 
     @Override
     public String toString() {
-        return "Data{" +
-                " " + dia +
+        return "Data: " +
+                "" + dia +
                 "/" + mes +
-                " " + ano +
-                '}';
+                "/" + ano;
     }
 }

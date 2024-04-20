@@ -38,7 +38,6 @@ public class Produto {
         this.dataValidade = dataValidade;
     }
 
-    // fazer a validação
     public boolean estaVencido(Data data) {
 
         LocalDate hoje = LocalDate.now();
@@ -58,10 +57,9 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", dataValidade=" + dataValidade +
-                '}';
+        return "Informações de produto: " +
+                "nome: " + nome + "\n " +
+                ", preco: " + preco + "\n " +
+                ", dataValidade: " + dataValidade.getDia() + "/" + dataValidade.getMes() + "/" + dataValidade.getAno();
     }
 }

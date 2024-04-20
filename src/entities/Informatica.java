@@ -19,8 +19,18 @@ public class Informatica extends Loja {
 
     @Override
     public String toString() {
-        return "Informatica{" +
-                "seguroEletronicos=" + seguroEletronicos +
-                "} " + super.toString();
+        return "Informações da loja de Informática: " + "\n " +
+                "Nome da loja: " + getNome() + "\n " +
+                "Quantidade de funcionários: " + getQuantidadeFuncionarios() + "\n " +
+                "Salário base dos funcionários: " + getSalarioBaseFuncionario() + "\n " +
+                "--------- Endereço ---------" +
+                "Nome da rua: " + getEndereco().getNomeDaRua() + "\n " +
+                "Cidade: " + getEndereco().getCidade() + "\n " +
+                "Estado: " + getEndereco().getEstado() + "\n " +
+                "País: " + getEndereco().getPais() + "\n " +
+                "CEP: " + getEndereco().getCep() + "\n " +
+                "Número: " + getEndereco().getNumero() + "\n " +
+                "Complemento: " + getEndereco().getComplemento() + "\n " +
+                "Seguro dos Eletrônicos: " + seguroEletronicos + "\n ";
     }
 }
