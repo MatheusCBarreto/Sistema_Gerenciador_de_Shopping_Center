@@ -90,7 +90,7 @@ public class Loja {
     @Override
     public String toString() {
         return "Dados da loja: \n " +
-                "Nome: '" + nome + " \n " +
+                "Nome: " + nome + " \n " +
                 "QuantidadeFuncionarios: " + quantidadeFuncionarios + "\n " +
                 "SalarioBaseFuncionario: " + salarioBaseFuncionario + "\n " +
                 "*** Endereco: *** \n " +

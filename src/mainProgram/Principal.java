@@ -84,7 +84,7 @@ public class Principal {
 
                     System.out.println("--------- Cadastro de produto-------------");
                     System.out.println("Nome do produto: ");
-                    String nomeProduto = input.next();
+                    String nomeProduto = input.nextLine();
 
                     System.out.println("Qual o preço do produto? ");
                     int precoProduto = input.nextInt();
@@ -112,6 +112,7 @@ public class Principal {
                         } else {
                             System.out.print("PRODUTO NÃO VENCIDO \n\n");
                         }
+                        System.out.println(produto);
 
                     } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar o produto. Tente novamente!");

@@ -43,23 +43,24 @@ public class Produto {
         LocalDate hoje = LocalDate.now();
 
         if (data.getAno() > hoje.getYear()) {
-            return true;
+            return false;
         } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())) {
-            return true;
+            return false;
         } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())
                 && (data.getDia() > hoje.getDayOfMonth())) {
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
 
     }
 
     @Override
     public String toString() {
-        return "Informações de produto: " +
-                "nome: " + nome + "\n " +
-                ", preco: " + preco + "\n " +
-                ", dataValidade: " + dataValidade.getDia() + "/" + dataValidade.getMes() + "/" + dataValidade.getAno();
+        return "Informações de produto: " + "\n " +
+                "-------------------------------" + "\n " +
+                "Nome: " + nome + "\n " +
+                "Preco: " + preco + "\n " +
+                "DataValidade: " + dataValidade.getDia() + "/" + dataValidade.getMes() + "/" + dataValidade.getAno() + "\n\n";
     }
 }
