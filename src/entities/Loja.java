@@ -1,5 +1,7 @@
 package entities;
 
+import entities.Endereco;
+
 public class Loja {
 
     private String nome;
@@ -85,13 +87,14 @@ public class Loja {
         }
     }
 
-
     @Override
     public String toString() {
         return "Loja{" +
-                "nome=' " + nome + '\'' +
-                ", quantidadeFuncionarios= " + quantidadeFuncionarios +
-                ", salarioBaseFuncionario= " + salarioBaseFuncionario +
+                "nome='" + nome + '\'' +
+                ", quantidadeFuncionarios=" + quantidadeFuncionarios +
+                ", salarioBaseFuncionario=" + salarioBaseFuncionario +
+                ", endereco=" + endereco +
+                ", dataFundacao=" + dataFundacao +
                 '}';
     }
 }

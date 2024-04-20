@@ -101,7 +101,14 @@ public class Principal {
                         Produto produto = new Produto(nomeProduto, precoProduto,
                                 new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
 
-                        System.out.print("********** LOJA CRIADA COM SUCESSO! ***********");
+                        System.out.print("********** PRODUTO CRIADO COM SUCESSO ********");
+
+                        boolean vencido = produto.estaVencido(new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
+                        if(vencido) {
+                            System.out.print("PRODUTO VENCIDO");
+                        } else {
+                            System.out.print("PRODUTO NÃO VENCIDO");
+                        }
 
                     } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar o produto. Tente novamente!");
