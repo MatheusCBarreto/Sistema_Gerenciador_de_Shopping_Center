@@ -44,14 +44,14 @@ public class Produto {
         LocalDate hoje = LocalDate.now();
 
         if (data.getAno() > hoje.getYear()) {
-            return false;
+            return true;
         } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())) {
-            return false;
+            return true;
         } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())
                 && (data.getDia() > hoje.getDayOfMonth())) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
 
     }

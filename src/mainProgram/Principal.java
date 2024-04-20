@@ -16,62 +16,62 @@ public class Principal {
             System.out.println("Escolha umas das opções a seguir: ");
             System.out.println("[1] Criar uma loja\n[2] Criar um produto\n[3] sair");
             response = input.nextInt();
-
+            input.nextLine();
             switch (response) {
                 case 1:
 
-                    System.out.println("Qual o nome da sua loja? ");
-                    String nomeLoja = input.next();
+                    System.out.print("Qual o nome da sua loja? ");
+                    String nomeLoja = input.nextLine();
 
-                    System.out.println("Quantos funcionários tem a sua loja? ");
+                    System.out.print("Quantos funcionários tem a sua loja? ");
                     int qtdFuncionariosLoja = input.nextInt();
-
-                    System.out.println("Qual o salario base do seu funcionário? ");
+                    input.nextLine();
+                    System.out.print("Qual o salario base do seu funcionário? ");
                     int salarioBase = input.nextInt();
+                    input.nextLine();
+                    System.out.println("----------------------------------------------------");
 
-                    System.out.print("----------------------------------------------------");
-
-                    System.out.print("Qual o endereço da sua loja? \n");
+                    System.out.println("Qual o endereço da sua loja?");
                     System.out.println("Nome da rua: ");
                     String enderecoNomeRua = input.nextLine();
 
-                    System.out.print("Qual a cidade da sua loja? \n");
+                    System.out.print("Qual a cidade da sua loja? ");
                     String enderecoCidade = input.nextLine();
 
-                    System.out.print("Qual o Estado da sua loja? Ex.:[SP, RJ, ...] \n");
+                    System.out.print("Qual o Estado da sua loja? Ex.:[SP, RJ, ...] ");
                     String enderecoEstado = input.next();
 
-                    System.out.print("Qual o país da sua loja? \n");
-                    String enderecoPais = input.nextLine();
+                    System.out.print("Qual o país da sua loja? ");
+                    String enderecoPais = input.next();
 
-                    System.out.print("Qual o CEP da sua loja? Ex.: 00000-000 \n");
+                    System.out.print("Qual o CEP da sua loja? Ex.: 00000-000 ");
                     String enderecoCep = input.next();
 
-                    System.out.print("Qual o número da sua loja? \n");
+                    System.out.print("Qual o número da sua loja?: ");
                     String enderecoNumeroLoja = input.next();
-
-                    System.out.print("Algum complemento? \n");
+                    input.nextLine();
+                    System.out.print("Algum complemento: ");
                     String enderecoComplemento = input.nextLine();
 
-                    System.out.print("----------------------------------------------------");
+                    System.out.println("----------------------------------------------------");
 
                     System.out.println("Qual a data de fundação da sua loja? ");
-                    System.out.println("Dia? \n");
+                    System.out.print("Dia? \n");
                     int dataFundacaoDia = input.nextInt();
-
-                    System.out.println("Número referente ao mês? Ex.: [1, 2, 3, 4, ...] \n");
+                    input.nextLine();
+                    System.out.print("Número referente ao mês? Ex.: [1, 2, 3, 4, ...] \n");
                     int dataFundacaoMes = input.nextInt();
-
-                    System.out.println("Ano? ");
+                    input.nextLine();
+                    System.out.print("Ano? ");
                     int dataFundacaoAno = input.nextInt();
-
+                    input.nextLine();
                     try {
                         Loja loja = new Loja(nomeLoja, qtdFuncionariosLoja, salarioBase,
                                 new Endereco(enderecoNomeRua, enderecoCidade, enderecoEstado, enderecoPais, enderecoCep,
                                         enderecoNumeroLoja, enderecoComplemento),
                                 new Data(dataFundacaoDia, dataFundacaoMes, dataFundacaoAno));
 
-                        System.out.print("********** LOJA CRIADA COM SUCESSO! ************");
+                        System.out.print("********** LOJA CRIADA COM SUCESSO! ************ \n\n");
 
                     } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar a loja. Tente novamente!");
@@ -86,36 +86,39 @@ public class Principal {
 
                     System.out.println("Qual o preço do produto? ");
                     int precoProduto = input.nextInt();
-
+                    input.nextLine();
                     System.out.print("E a data de validade? \n");
                     System.out.println("Dia: ");
                     int diaValidadeProduto = input.nextInt();
+                    input.nextLine();
 
                     System.out.println("Mês: ");
                     int mesValidadeProduto = input.nextInt();
-
+                    input.nextLine();
                     System.out.println("Ano: ");
                     int anoValidadeProduto = input.nextInt();
-
+                    input.nextLine();
                     try {
                         Produto produto = new Produto(nomeProduto, precoProduto,
                                 new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
 
-                        System.out.print("********** PRODUTO CRIADO COM SUCESSO ********");
+                        System.out.print("********** PRODUTO CRIADO COM SUCESSO ******** \n\n");
 
                         boolean vencido = produto.estaVencido(new Data(diaValidadeProduto, mesValidadeProduto, anoValidadeProduto));
                         if(vencido) {
-                            System.out.print("PRODUTO VENCIDO");
+                            System.out.print("PRODUTO VENCIDO \n\n");
                         } else {
-                            System.out.print("PRODUTO NÃO VENCIDO");
+                            System.out.print("PRODUTO NÃO VENCIDO \n\n");
                         }
 
                     } catch (Exception error) {
                         System.out.println(error + ": " + "Não foi possível cadastrar o produto. Tente novamente!");
                     }
-
+                    break;
                 case 3:
                     response = 3;
+                    System.out.print("Saindo...");
+                    System.out.print("Até mais! :)");
                     break;
                 default:
                     System.out.print("Opção inválida!");
