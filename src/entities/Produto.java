@@ -1,7 +1,5 @@
 package entities;
 
-import java.time.LocalDate;
-
 public class Produto {
 
     private String nome;
@@ -40,14 +38,12 @@ public class Produto {
 
     public boolean estaVencido(Data data) {
 
-        LocalDate hoje = LocalDate.now();
-
-        if (data.getAno() > hoje.getYear()) {
+        if (data.getAno() > dataValidade.getAno()) {
             return false;
-        } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())) {
+        } else if ((data.getMes() > dataValidade.getMes()) && (data.getAno() > dataValidade.getAno())) {
             return false;
-        } else if ((data.getMes() > hoje.getMonthValue()) && (data.getAno() > hoje.getYear())
-                && (data.getDia() > hoje.getDayOfMonth())) {
+        } else if ((data.getMes() > dataValidade.getMes()) && (data.getAno() > dataValidade.getAno())
+                && (data.getDia() > dataValidade.getDia())) {
             return false;
         } else {
             return true;
