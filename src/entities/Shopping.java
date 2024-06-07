@@ -54,7 +54,7 @@ public class Shopping {
 
     public boolean removeLoja(String nomeLoja) {
         for (int i = 0; i < lojas.length; i++) {
-            if (lojas[i] != null && lojas[i].getNome().equalsIgnoreCase(nomeLoja)) {
+            if (lojas[i] != null && lojas[i].getNome().equals(nomeLoja)) {
                 lojas[i] = null;
                 return true;
             }
@@ -66,7 +66,7 @@ public class Shopping {
     public int quantidadeLojasPorTipo(String tipoLoja) {
         int total = 0;
         for (Loja loja : lojas) {
-            if (loja != null && loja.getClass().getSimpleName().equalsIgnoreCase(tipoLoja)) {
+            if (loja != null && loja.getClass().getSimpleName().equals(tipoLoja)) {
                 total++;
             }
         }
