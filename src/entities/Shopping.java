@@ -1,5 +1,7 @@
 package entities;
 
+import entities.*;
+
 import java.util.Arrays;
 
 public class Shopping {
@@ -41,7 +43,7 @@ public class Shopping {
 
     public boolean insereLoja(Loja loja) {
         for(int i = 0; i < lojas.length; i++) {
-            if(lojas[i] == null) {
+            if (lojas[i] == null) {
                 lojas[i] = loja;
                 return true;
             }
@@ -51,8 +53,8 @@ public class Shopping {
     }
 
     public boolean removeLoja(String nomeLoja) {
-        for(int i = 0; i < lojas.length; i++) {
-            if(lojas[i].getNome().equalsIgnoreCase(nomeLoja)) {
+        for (int i = 0; i < lojas.length; i++) {
+            if (lojas[i] != null && lojas[i].getNome().equalsIgnoreCase(nomeLoja)) {
                 lojas[i] = null;
                 return true;
             }
@@ -62,57 +64,31 @@ public class Shopping {
     }
 
     public int quantidadeLojasPorTipo(String tipoLoja) {
-        int totalCosmetico = 0;
-        int totalVestuario = 0;
-        int totalBijuteria = 0;
-        int totalAlimentacao = 0;
-        int totalInformatica = 0;
-
-        for(int i = 0; i < lojas.length; i++) {
-            if(lojas[i] != null && lojas[i] instanceof Cosmetico) {
-                totalCosmetico++;
-                return totalCosmetico;
-            }
-            if(lojas[i] != null && lojas[i] instanceof Vestuario) {
-                totalVestuario++;
-                return totalVestuario;
-            }
-            if(lojas[i] != null && lojas[i] instanceof Bijuteria) {
-                totalBijuteria++;
-                return totalBijuteria;
-            }
-            if(lojas[i] != null && lojas[i] instanceof Alimentacao) {
-                totalAlimentacao++;
-                return totalAlimentacao;
-            }
-            if(lojas[i] != null && lojas[i] instanceof Informatica) {
-                totalInformatica++;
-                return totalInformatica;
+        int total = 0;
+        for (Loja loja : lojas) {
+            if (loja != null && loja.getClass().getSimpleName().equalsIgnoreCase(tipoLoja)) {
+                total++;
             }
         }
-        return -1;
+        return total;
     }
 
     public Informatica lojaSeguroMaisCaro() {
 
-         Informatica maiorSeguro = null;
+        Informatica maiorSeguro = null;
 
-         for(int i = 0; i < lojas.length; i++) {
-             Informatica loja = null;
-             if (lojas[i] instanceof Informatica) {
-                 loja = (Informatica) lojas[i];
-                 if (maiorSeguro != null && loja.getSeguroEletronicos() > maiorSeguro.getSeguroEletronicos()) {
-                     loja = maiorSeguro;
-                 }
-             }
-             return loja;
-         }
-         return null;
+        for (int i = 0; i < lojas.length; i++) {
+            Informatica loja = null;
+            if (lojas[i] instanceof Informatica) {
+                loja = (Informatica) lojas[i];
+                if (maiorSeguro != null && loja.getSeguroEletronicos() > maiorSeguro.getSeguroEletronicos()) {
+                    loja = maiorSeguro;
+                }
+            }
+            return loja;
+        }
+        return null;
     }
-
-
-
-
 
     @Override
     public String toString() {

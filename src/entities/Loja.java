@@ -23,12 +23,13 @@ public class Loja {
         estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
-    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao, int quantidadeProdutos) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         salarioBaseFuncionario = -1;
         this.endereco = endereco;
         this.dataFundacao = dataFundacao;
+        estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
     // Gettrs e Settrs
@@ -99,20 +100,21 @@ public class Loja {
     }
 
     public String imprimeProdutos() {
-        for (Produto produto : estoqueProdutos) {
-           return produto.toString();
+        String infoProduto;
+        for(int i = 0; i < estoqueProdutos.length; i++) {
+            if(estoqueProdutos[i] != null) {
+                infoProduto = estoqueProdutos[i].getClass().toString();
+                return infoProduto;
+            }
         }
         return null;
     }
 
-    public boolean insereProdutos(Produto produto) {
+    public boolean insereProduto(Produto produto) {
         for (int i = 0; i < estoqueProdutos.length; i++) {
             if (estoqueProdutos[i] == null) {
                 estoqueProdutos[i] = produto;
                 return true;
-            } else {
-                System.out.println("Não foi possível inserir o produto! Tente novamente em outra posição.");
-                return false;
             }
         }
         return false;
@@ -120,12 +122,9 @@ public class Loja {
 
     public boolean removeProduto(String nomeProduto) {
         for (int i = 0; i < estoqueProdutos.length; i++) {
-            if (estoqueProdutos[i].getNome().equalsIgnoreCase(nomeProduto)) {
+            if (estoqueProdutos[i] != null && estoqueProdutos[i].getNome().equalsIgnoreCase(nomeProduto)) {
                 estoqueProdutos[i] = null;
                 return true;
-            } else {
-                System.out.println("Ocorreu um erro ao excluir seu produto. Por favor, tente novamente.");
-                return false;
             }
         }
         return false;

@@ -44,15 +44,12 @@ public class Data {
     }
 
     public boolean verificaAnoBissexto() {
-        if (this.ano % 4 == 0) {
-            if(this.ano / 100 == 0) {
+        if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
                 return true;
-            }
         }
         else {
             return false;
         }
-        return false;
     };
 
     public String validarData(int dia, int mes, int ano) {

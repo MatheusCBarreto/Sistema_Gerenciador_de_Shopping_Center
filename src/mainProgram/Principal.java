@@ -65,11 +65,16 @@ public class Principal {
                     System.out.print("Ano? ");
                     int dataFundacaoAno = input.nextInt();
                     input.nextLine();
+
+                    System.out.println("------------------------------------------------------");
+
+                    System.out.println("Quantos produtos deseja adicionar a sua loja? ");
+                    int quantdProdutosLoja = input.nextInt();
                     try {
                         Loja loja = new Loja(nomeLoja, qtdFuncionariosLoja, salarioBase,
                                 new Endereco(enderecoNomeRua, enderecoCidade, enderecoEstado, enderecoPais, enderecoCep,
                                         enderecoNumeroLoja, enderecoComplemento),
-                                new Data(dataFundacaoDia, dataFundacaoMes, dataFundacaoAno));
+                                new Data(dataFundacaoDia, dataFundacaoMes, dataFundacaoAno), quantdProdutosLoja);
 
                         System.out.print("********** LOJA CRIADA COM SUCESSO! ************ \n");
                         System.out.print("Informações da sua loja: \n");

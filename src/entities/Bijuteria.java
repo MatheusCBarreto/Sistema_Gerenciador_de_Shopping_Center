@@ -2,19 +2,19 @@ package entities;
 
 public class Bijuteria extends Loja {
 
-    private double metasVendas;
+    private double metaVendas;
 
-    public Bijuteria(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double metasVendas) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
-        this.metasVendas = metasVendas;
+    public Bijuteria(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int quantidadeProdutos, double metaVendas) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
+        this.metaVendas = metaVendas;
     }
 
-    public double getMetasVendas() {
-        return metasVendas;
+    public double getMetaVendas() {
+        return metaVendas;
     }
 
-    public void setMetasVendas(double metasVendas) {
-        this.metasVendas = metasVendas;
+    public void setMetaVendas(double metasVendas) {
+        this.metaVendas = metasVendas;
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Bijuteria extends Loja {
                 "CEP: " + getEndereco().getCep() + "\n " +
                 "Número: " + getEndereco().getNumero() + "\n " +
                 "Complemento: " + getEndereco().getComplemento() + "\n " +
-                "Metas de Vendas " + metasVendas + "\n ";
+                "Metas de Vendas " + metaVendas + "\n ";
     }
 }

@@ -4,9 +4,10 @@ public class Cosmetico extends Loja {
 
     private double taxaComercializacao;
 
-    public Cosmetico(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double taxaComercializacao) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+    public Cosmetico(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int quantidadeProdutos, double taxaComercializacao) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeProdutos);
         this.taxaComercializacao = taxaComercializacao;
+        estoqueProdutos = new Produto[quantidadeProdutos];
     }
 
     public double getTaxaComercializacao() {
