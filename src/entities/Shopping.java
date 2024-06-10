@@ -74,21 +74,21 @@ public class Shopping {
     }
 
     public Informatica lojaSeguroMaisCaro() {
-
         Informatica maiorSeguro = null;
+        double maxSeguro = 0.0;
 
         for (int i = 0; i < lojas.length; i++) {
-            Informatica loja = null;
             if (lojas[i] instanceof Informatica) {
-                loja = (Informatica) lojas[i];
-                if (maiorSeguro != null && loja.getSeguroEletronicos() > maiorSeguro.getSeguroEletronicos()) {
-                    loja = maiorSeguro;
+                Informatica loja = (Informatica) lojas[i];
+                if (loja.getSeguroEletronicos() > maxSeguro) {
+                    maxSeguro = loja.getSeguroEletronicos();
+                    maiorSeguro = loja;
                 }
             }
-            return loja;
         }
-        return null;
+        return maiorSeguro;
     }
+
 
     @Override
     public String toString() {
