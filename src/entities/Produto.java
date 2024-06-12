@@ -38,17 +38,15 @@ public class Produto {
 
     public boolean estaVencido(Data data) {
 
-        if (data.getAno() > dataValidade.getAno()) {
+        if (data.getAno() < dataValidade.getAno()) {
             return false;
-        } else if ((data.getMes() > dataValidade.getMes()) && (data.getAno() > dataValidade.getAno())) {
+        } else if (data.getAno() == dataValidade.getAno() && data.getMes() < dataValidade.getMes()) {
             return false;
-        } else if ((data.getMes() > dataValidade.getMes()) && (data.getAno() > dataValidade.getAno())
-                && (data.getDia() > dataValidade.getDia())) {
+        } else if (data.getAno() == dataValidade.getAno() && data.getMes() == dataValidade.getMes() && data.getDia() <= dataValidade.getDia()) {
             return false;
         } else {
             return true;
         }
-
     }
 
     @Override
